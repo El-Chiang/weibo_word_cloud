@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="applicable-device" content="pc, mobile">
+    <meta name="render" content="webkit">
+    <title>微博词云生成</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="jumbotron" style="background:#007bff;color:#fff">
+        <div class="container">
+            <h1 class="display-4">微博词云</h1>
+            <br>
+            <p class="lead" style="color:#fff">
+                本工具可以为新浪微博用户自动生成词云，仅获取公开微博，不会获取好友圈或者仅为私人可见微博内容。
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <br>
+        <div class="card">
+            <div class="card-header">
+                微博词云生成
+            </div>
+            <div class="card-body">
+                <form action="http://localhost:5000/getContent" method="post" id="f">
+                    <div class="form-group">
+                        <label for="InputUsername">微博ID</label>
+                        <input type="text" class="form-control" id="InputUsername" name="uid" required>
+                        <small class="form-text text-muted">请保证输入的正确的微博ID(必须为昵称，不能是手机号或者邮箱)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="InputNumber">微博条数</label>
+                        <input type="number" class="form-control" id="InputNumber" name="num" value="150" max="400" placeholder="小于400">
+                        <small class="form-text text-muted">你可以设置用于分析的时间最近最大微博数量(小于400)，默认为150条</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">一键生成</button>
+                </form>
+                <br>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                Bug反馈
+            </div>
+            <div class="card-body">
+                <strong>联系方式</strong>
+                <address>
+                    <li class="fa fa-weibo">
+                        <a href="https://m.weibo.cn/u/5096104875" style="border:regular">皮皮猴亖三二一</a>
+                    </li>
+                    <br>
+                    <li class="fa fa-envelope">
+                        <a href="mailto:jing1downey@gmail.com">jing1downey@gmail.com</a>
+                    </li>
+                </address>
+            </div>
+        </div>
+        <br>
+        <div align="center">
+            <br><br>
+            <small class="text-muted">Made with&nbsp;<i class="fa fa-paw"></i>&nbsp;El Chiang</small>
+            <br><br>
+        </div>
+    </div>
+</body>
+</html>
