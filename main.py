@@ -129,15 +129,15 @@ def weibo_spider():
         if req.status_code == 200:
             for i in weibo_content:
                 try:
-                    weibo_text = re.sub('<.*?>', '', i['mblog']['text'])  # 文本内容
+                    weibo_text = re.sub('<.*?>', '', i['mblog'].get('text'))  # 文本内容
                     # weibo_time = i['mblog']['created_at']  # 时间
                     weibo_counts += 1
-                    if weibo_counts == all_counts or weibo_counts == all_counts:
+                    if weibo_counts == all_counts:
                         flag = 0
                         break
                     all_text.append(weibo_text)
-                except:
-                    return "未知错误"
+                except Exception, e:
+                    pass
         if flag == 0:
             break
 
